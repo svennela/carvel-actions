@@ -7,6 +7,10 @@ inputs:
     description: "Source registry"
     required: true
     default: "docker.io/library/nginx:1.20-alpine"
+  # source_image:
+  #   description: "Source image"
+  #   required: true
+  #   default: "docker.io/library/nginx:1.20-alpine"  
   destination_registry:
       description: 'https://goharbor.io/test-repo/nginx-alpine-perl'
       required: true
