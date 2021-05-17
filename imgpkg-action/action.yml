@@ -3,10 +3,22 @@ description: "Copying images from one registry to another registry"
 author: "svennela,peter"
 
 inputs:
-  SOURCE_REGISTRY:
+  source_registry:
     description: "Source registry"
     required: true
-    default: "docker.io"
+    default: "docker.io/library/nginx:1.20-alpine"
+  destination_registry:
+      description: 'https://goharbor.io/test-repo/nginx-alpine-perl'
+      required: true
+      default: "1"
+  destination_registry_username:
+      description: 'registry usernmae'
+      required: false
+      default: "username"
+  destination_registry_password:
+    description: 'registry password'
+    required: false
+    default: "password"      
 
 runs:
   using: "docker"
