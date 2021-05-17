@@ -3,7 +3,7 @@ description: "Copying images from one registry to another registry"
 author: "svennela,peter"
 
 inputs:
-  source_registry:
+  SOURCE_REGISTRY:
     description: "Source registry"
     required: true
     default: "docker.io"
