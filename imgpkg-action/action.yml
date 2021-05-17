@@ -6,7 +6,7 @@ inputs:
   source_registry:
     description: "Source registry"
     required: true
-    default: "docker.io/library/nginx:1.20-alpine"
+    default: ""
   # source_image:
   #   description: "Source image"
   #   required: true
