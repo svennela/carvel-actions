@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-sh -c "source registry $source_registry"
+sh -c "registry $source_registry"
