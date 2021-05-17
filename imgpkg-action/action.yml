@@ -14,7 +14,7 @@ inputs:
   destination_registry:
       description: 'https://goharbor.io/test-repo/nginx-alpine-perl'
       required: true
-      default: "1"
+      default: "https://goharbor.io/test-repo/nginx-alpine-perl"
   destination_registry_username:
       description: 'registry usernmae'
       required: false
