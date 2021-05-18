@@ -14,15 +14,15 @@ inputs:
   destination_registry:
       description: 'https://goharbor.io/test-repo/nginx-alpine-perl'
       required: true
-      default: "https://goharbor.io/test-repo/nginx-alpine-perl"
+      default: "${{ secrets.HARBOR_REGISTRY }}"
   destination_registry_username:
       description: 'registry usernmae'
       required: false
-      default: "username"
+      default: "${{ secrets.HARBOR_USERNAME }}"
   destination_registry_password:
     description: 'registry password'
     required: false
-    default: "password"      
+    default: "${{ secrets.HARBOR_PASSWORD }}"      
 
 runs:
   using: "docker"
