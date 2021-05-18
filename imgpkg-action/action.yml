@@ -6,7 +6,7 @@ inputs:
   source_registry:
     description: "Source registry"
     required: true
-    default: ""
+    default: "docker.io/library/nginx:1.20-alpine"
   # source_image:
   #   description: "Source image"
   #   required: true
@@ -14,15 +14,15 @@ inputs:
   destination_registry:
       description: 'https://goharbor.io/test-repo/nginx-alpine-perl'
       required: true
-      default: ${{ secrets.HARBOR_REGISTRY }}
+      default: "https://goharbor.io/test-repo/nginx-alpine-perl"
   destination_registry_username:
       description: 'registry usernmae'
       required: false
-      default: ${{ secrets.HARBOR_USERNAME }}
+      default: "username"
   destination_registry_password:
     description: 'registry password'
     required: false
-    default: ${{ secrets.HARBOR_PASSWORD }}      
+    default: "password"      
 
 runs:
   using: "docker"

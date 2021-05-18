@@ -9,3 +9,6 @@ jobs:
       - uses: ./imgpkg-action
         with:
           SOURCE_REGISTRY: "docker.io/library/nginx:1.20-alpine"
+          destination_registry: ${{ secrets.HARBOR_REGISTRY }}
+          destination_registry_username: ${{ secrets.HARBOR_USERNAME }}
+          destination_registry_password: ${{ secrets.HARBOR_PASSWORD }}
