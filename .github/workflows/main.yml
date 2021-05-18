@@ -8,7 +8,9 @@ jobs:
       - uses: actions/checkout@v1
       - uses: ./imgpkg-action
         with:
-          SOURCE_REGISTRY: "docker.io/library/nginx:1.20-alpine"
-          destination_registry: ${{ secrets.HARBOR_REGISTRY }}
-          destination_registry_username: ${{ secrets.HARBOR_USERNAME }}
-          destination_registry_password: ${{ secrets.HARBOR_PASSWORD }}
+          source_registry: ${{ secrets.SOURCE_REGISTRY }}
+          source_registry_username: ${{ secrets.SOURCE_REGISTRY_USERNAME }}
+          source_registry_password: ${{ secrets.SOURCE_REGISTRY_PASSWORD }}
+          destination_registry: ${{ secrets.DESTINATION_REGISTRY }}
+          destination_registry_username: ${{ secrets.DESTINATION_USERNAME }}
+          destination_registry_password: ${{ secrets.DESTINATION_PASSWORD }}
