@@ -1,4 +1,4 @@
-name: "Image copy"
+name: "Carvel Image copy"
 description: "Copying images from one registry to another registry"
 author: "svennela,peter"
 
