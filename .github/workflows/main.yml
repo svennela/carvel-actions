@@ -12,5 +12,5 @@ jobs:
           source_registry_username: ${{ secrets.SOURCE_REGISTRY_USERNAME }}
           source_registry_password: ${{ secrets.SOURCE_REGISTRY_PASSWORD }}
           destination_registry: ${{ secrets.DESTINATION_REGISTRY }}
-          destination_registry_username: ${{ secrets.DESTINATION_USERNAME }}
-          destination_registry_password: ${{ secrets.DESTINATION_PASSWORD }}
+          destination_registry_username: ${{ secrets.DESTINATION_REGISTRY_USERNAME }}
+          destination_registry_password: ${{ secrets.DESTINATION_REGISTRY_PASSWORD }}
