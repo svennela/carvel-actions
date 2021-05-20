@@ -7,6 +7,8 @@ docker_url=https://download.docker.com/linux/static/stable/x86_64
 docker_version=20.10.6
 wget $docker_url/docker-$docker_version.tgz
 tar zxvf docker-20.10.6.tgz --strip 1 -C /usr/bin docker/docker
+# If source login is provided, do docker login to source registry.
+
 imgpkg copy -i ${INPUT_SOURCE_REGISTRY} --to-tar=source_image.tar
 ls -al
 pwd

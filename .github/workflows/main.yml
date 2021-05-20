@@ -5,7 +5,7 @@ jobs:
     name: Carvel image copy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: ./imgpkg-action
         with:
           source_registry: ${{ secrets.SOURCE_REGISTRY }}
