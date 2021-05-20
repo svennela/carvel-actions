@@ -9,11 +9,10 @@ wget $docker_url/docker-$docker_version.tgz
 tar zxvf docker-20.10.6.tgz --strip 1 -C /usr/bin docker/docker
 imgpkg copy -i ${INPUT_SOURCE_REGISTRY} --to-tar=source_image.tar
 ls -al
-
+pwd
 echo "${{ INPUT_DESTINATION_REGISTRY_PASSWORD }}" | docker login "${{ INPUT_DESTINATION_REGISTRY }}" -u "${{ INPUT_DESTINATION_REGISTRY_USERNAME }}" --password-stdin
 ls -al .
-cat ~/.docker/config.json
-imgpkg copy --tar source_image.tar --to-repo "${{ INPUT_DESTINATION_REGISTRY }}"
+#imgpkg copy --tar source_image.tar --to-repo "${{ INPUT_DESTINATION_REGISTRY }}"
 #sh -c "$INPUT_SOURCE_REGISTRY"
 echo "----------------------------"
 echo $INPUT_SOURCE_REGISTRY
