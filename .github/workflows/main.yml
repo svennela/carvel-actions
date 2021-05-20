@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ./imgpkg-action
+      - uses: ./carvel-imgpkg-action
         with:
           source_registry: ${{ secrets.SOURCE_REGISTRY }}
           source_registry_username: ${{ secrets.SOURCE_REGISTRY_USERNAME }}
