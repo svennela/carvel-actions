@@ -1,6 +1,6 @@
 #FROM debian:9.5-slim
 FROM alpine:latest
-# installes required packages for our script
+# installs required packages for our script
 RUN apk add --no-cache \
   bash \
   ca-certificates \
