@@ -11,7 +11,6 @@ imgpkg copy -i ${INPUT_SOURCE_REGISTRY} --to-tar=source_image.tar
 ls -al
 pwd
 echo "${{ INPUT_DESTINATION_REGISTRY_PASSWORD }}" | docker login "${{ INPUT_DESTINATION_REGISTRY }}" -u "${{ INPUT_DESTINATION_REGISTRY_USERNAME }}" --password-stdin
-ls -al .
 #imgpkg copy --tar source_image.tar --to-repo "${{ INPUT_DESTINATION_REGISTRY }}"
 #sh -c "$INPUT_SOURCE_REGISTRY"
 echo "----------------------------"
