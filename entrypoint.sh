@@ -21,15 +21,31 @@ echo $
 echo $INPUT_SOURCE_REGISTRY_USERNAME
 echo $INPUT_SOURCE_REGISTRY_PASSWORD
 
-# echo "is_MY_SECRET_set: ${env.INPUT_SOURCE_REGISTRY_USERNAME != ''}"
-# echo "::set-output name=is_MY_SECRET_set::${env.INPUT_SOURCE_REGISTRY_PASSWORD != ''}"
+if [[ ! -v $INPUT_SOURCE_REGISTRY_USERNAME ]]; then
+    echo "INPUT_SOURCE_REGISTRY_USERNAME is not set"
+elif [[ -z "$INPUT_SOURCE_REGISTRY_USERNAME" ]]; then
+    echo "INPUT_SOURCE_REGISTRY_USERNAME is set to the empty string"
+else
+    echo "INPUT_SOURCE_REGISTRY_USERNAME has the value: $INPUT_SOURCE_REGISTRY_USERNAME"
+fi
+
 
 echo "::set-output name=INPUT_SOURCE_REGISTRY_USERNAME::{ $INPUT_SOURCE_REGISTRY_USERNAME != ''}"
 echo "::set-output name=INPUT_SOURCE_REGISTRY_PASSWORD::{ $INPUT_SOURCE_REGISTRY_PASSWORD != ''}"
-
+echo "----------------------------"
 
 echo $INPUT_DESTINATION_REGISTRY
 echo $INPUT_DESTINATION_REGISTRY_USERNAME
 echo $INPUT_DESTINATION_REGISTRY_PASSWORD
+
+
+
+if [[ ! -v $INPUT_DESTINATION_REGISTRY_USERNAME ]]; then
+    echo "INPUT_DESTINATION_REGISTRY_USERNAME is not set"
+elif [[ -z "$INPUT_DESTINATION_REGISTRY_USERNAME" ]]; then
+    echo "INPUT_DESTINATION_REGISTRY_USERNAME is set to the empty string"
+else
+    echo "INPUT_DESTINATION_REGISTRY_USERNAME has the value: $INPUT_DESTINATION_REGISTRY_USERNAME"
+fi
 
 echo "----------------------------"
