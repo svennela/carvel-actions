@@ -21,11 +21,11 @@ echo $
 echo $INPUT_SOURCE_REGISTRY_USERNAME
 echo $INPUT_SOURCE_REGISTRY_PASSWORD
 
-echo "is_MY_SECRET_set: ${{ env.INPUT_SOURCE_REGISTRY_USERNAME != '' }}"
-echo "::set-output name=is_MY_SECRET_set::${{ env.INPUT_SOURCE_REGISTRY_PASSWORD != '' }}"
+echo "is_MY_SECRET_set: ${env.INPUT_SOURCE_REGISTRY_USERNAME != ''}"
+echo "::set-output name=is_MY_SECRET_set::${env.INPUT_SOURCE_REGISTRY_PASSWORD != ''}"
 
-echo "::set-output name=is_MY_SECRET_set::${{ INPUT_SOURCE_REGISTRY_USERNAME != '' }}"
-echo "::set-output name=is_MY_SECRET_set::${{ INPUT_SOURCE_REGISTRY_PASSWORD != '' }}"
+echo "::set-output name=is_MY_SECRET_set::${INPUT_SOURCE_REGISTRY_USERNAME != ''}"
+echo "::set-output name=is_MY_SECRET_set::${INPUT_SOURCE_REGISTRY_PASSWORD != ''}"
 
 
 echo $INPUT_DESTINATION_REGISTRY
