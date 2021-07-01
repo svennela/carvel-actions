@@ -36,5 +36,4 @@ else
     echo "${INPUT_DESTINATION_REGISTRY_PASSWORD}" | docker login "${INPUT_DESTINATION_REGISTRY}" -u "${INPUT_DESTINATION_REGISTRY_USERNAME}" --password-stdin
     imgpkg copy --tar source_image.tar --to-repo ${INPUT_DESTINATION_REGISTRY}
 fi
-
 echo "------------------------------------------------------------------------------------"
