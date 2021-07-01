@@ -14,29 +14,25 @@ pwd
 #sh -c "$INPUT_SOURCE_REGISTRY"
 cat /github/home/.docker/config.json
 echo "------------------------------------------------------------------------------------"
-echo $INPUT_SOURCE_REGISTRY_USERNAME
-echo $INPUT_SOURCE_REGISTRY_PASSWORD
+# echo $INPUT_SOURCE_REGISTRY_USERNAME
+# echo $INPUT_SOURCE_REGISTRY_PASSWORD
 
 if [[ -z "$INPUT_SOURCE_REGISTRY_USERNAME" ]]; then
-    echo "INPUT_SOURCE_REGISTRY_USERNAME is set to the empty string just download tarfile from source registry"
     imgpkg copy -i ${INPUT_SOURCE_REGISTRY} --to-tar=source_image.tar
 else
-    echo "INPUT_SOURCE_REGISTRY_USERNAME has the value: $INPUT_SOURCE_REGISTRY_USERNAME"
     echo "${INPUT_SOURCE_REGISTRY_PASSWORD}" | docker login "${INPUT_SOURCE_REGISTRY}" -u "${INPUT_SOURCE_REGISTRY_USERNAME}" --password-stdin
     imgpkg copy -i ${INPUT_SOURCE_REGISTRY} --to-tar=source_image.tar
 fi
 
 echo "------------------------------------------------------------------------------------"
 
-echo $INPUT_DESTINATION_REGISTRY
-echo $INPUT_DESTINATION_REGISTRY_USERNAME
-echo $INPUT_DESTINATION_REGISTRY_PASSWORD
+# echo $INPUT_DESTINATION_REGISTRY
+# echo $INPUT_DESTINATION_REGISTRY_USERNAME
+# echo $INPUT_DESTINATION_REGISTRY_PASSWORD
 
 if [[ -z "$INPUT_DESTINATION_REGISTRY_USERNAME" ]]; then
-    echo "INPUT_DESTINATION_REGISTRY_USERNAME is set to the empty string"
     imgpkg copy --tar source_image.tar --to-repo ${INPUT_DESTINATION_REGISTRY}
 else
-    echo "INPUT_DESTINATION_REGISTRY_USERNAME has the value: $INPUT_DESTINATION_REGISTRY_USERNAME"
     echo "${INPUT_DESTINATION_REGISTRY_PASSWORD}" | docker login "${INPUT_DESTINATION_REGISTRY}" -u "${INPUT_DESTINATION_REGISTRY_USERNAME}" --password-stdin
     imgpkg copy --tar source_image.tar --to-repo ${INPUT_DESTINATION_REGISTRY}
 fi
