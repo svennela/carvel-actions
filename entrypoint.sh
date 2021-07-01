@@ -23,7 +23,9 @@ else
     echo "${INPUT_SOURCE_REGISTRY_PASSWORD}" | docker login "${INPUT_SOURCE_REGISTRY}" -u "${INPUT_SOURCE_REGISTRY_USERNAME}" --password-stdin
     imgpkg copy -i ${INPUT_SOURCE_REGISTRY} --to-tar=source_image.tar
 fi
+ 
 
+ 
 echo "------------------------------------------------------------------------------------"
 
 # echo $INPUT_DESTINATION_REGISTRY
